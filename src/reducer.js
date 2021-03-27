@@ -1,4 +1,4 @@
-import { SET_INPUT } from "./actions";
+import { SET_INPUT, SET_LOADING, SET_QUIZES } from "./actions";
 
 const reducer = (state, action) => {
   const payload = action.payload;
@@ -8,6 +8,22 @@ const reducer = (state, action) => {
       return {
         ...state,
         [payload.name]: payload.value,
+      };
+    case SET_LOADING:
+      return {
+        ...state,
+        loading: true,
+      };
+    case SET_QUIZES:
+      return {
+        ...state,
+        quizes: payload,
+        loading: false,
+        hasQuizStarted: true,
+      };
+    default:
+      return {
+        ...state,
       };
   }
 };

@@ -1,3 +1,5 @@
 const SET_INPUT = "SET_INPUT";
+const SET_LOADING = "SET_LOADING";
+const SET_QUIZES = "SET_QUIZES";
 
-export { SET_INPUT };
+export { SET_INPUT, SET_LOADING, SET_QUIZES };

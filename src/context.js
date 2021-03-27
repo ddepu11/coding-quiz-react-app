@@ -1,5 +1,5 @@
 import { useContext, createContext, useReducer } from "react";
-import { SET_INPUT } from "./actions";
+import { SET_INPUT, SET_LOADING, SET_QUIZES } from "./actions";
 import { reducer } from "./reducer";
 
 const AppContext = createContext();
@@ -8,6 +8,9 @@ const initialState = {
   category: "Linux",
   difficulty: "Easy",
   questions: 5,
+  loading: false,
+  quizes: [],
+  hasQuizStarted: false,
 };
 
 const AppProvider = ({ children }) => {
@@ -20,9 +23,11 @@ const AppProvider = ({ children }) => {
   };
 
   const fetchQuizs = async (url) => {
+    dispatch({ type: SET_LOADING });
     try {
       const res = await fetch(url);
       const data = await res.json();
+      dispatch({ type: SET_QUIZES, payload: data });
       console.log(data);
     } catch (error) {
       console.log(error);
