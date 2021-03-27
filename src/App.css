@@ -29,8 +29,11 @@
 }
 body {
   min-height: 100vh;
-  background: linear-gradient(to right, #000000, #434343);
   color: white;
+  background: url("./images/bg.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .container {
   max-width: 1200px;
