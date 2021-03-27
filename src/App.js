@@ -1,11 +1,11 @@
 import "./App.css";
+import From from "./Components/Form";
 
 function App() {
   return (
-    <div className="container">
-      <h1>Hello</h1>
+    <div className="container flex">
       {/* ugZIkGEUifiDiBtyeQ5U1QamafMTZuWUnzNPmzYv */}
-      
+      <From />
     </div>
   );
 }
