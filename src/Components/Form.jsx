@@ -21,15 +21,9 @@ const From = () => {
           <option value="Linux">Linux</option>
           <option value="DevOps">DevOps</option>
           <option value="Networking">Networking</option>
-          <option value="JAVA">JAVA</option>
-          <option value="C++">C++</option>
-          <option value="JS">JS</option>
-          <option value="C">C</option>
-          <option value="PHP">PHP</option>
-          <option value="C#">C#</option>
-          <option value="PYTHON">PYTHON</option>
-          <option value="GO">GO</option>
-          <option value="RUBY">RUBY</option>
+          <option value="JavaScript">
+            Programming (PHP, JS, Pythong and etc.)
+          </option>
           <option value="Cloud">Cloud</option>
           <option value="Docker">Docker</option>
           <option value="Kubernetes">Kubernetes</option>
@@ -57,6 +51,7 @@ const From = () => {
           id="questions"
           value={questions}
           onChange={handleInput}
+          min="2"
         />
       </div>
       <button type="submit" className="sbm_btn">

@@ -31,7 +31,9 @@ const AppProvider = ({ children }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const END_POINT = `https://quizapi.io/api/v1/questions/?apiKey=`;
+
+    const END_POINT = `https://quizapi.io/api/v1/questions?apiKey=${process.env.REACT_APP_API_KEY}&category=${state.category}&difficulty=${state.difficulty}&limit=${state.questions}`;
+
     fetchQuizs(END_POINT);
   };
 
