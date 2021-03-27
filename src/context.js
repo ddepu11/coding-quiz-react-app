@@ -19,11 +19,24 @@ const AppProvider = ({ children }) => {
     dispatch({ type: SET_INPUT, payload: { name, value } });
   };
 
-  // const handleLimit = (e) => {};
-  // const handleDifficulty = (e) => {};
+  const fetchQuizs = async (url) => {
+    try {
+      const res = await fetch(url);
+      const data = await res.json();
+      console.log(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const END_POINT = `https://quizapi.io/api/v1/questions/?apiKey=`;
+    fetchQuizs(END_POINT);
+  };
 
   return (
-    <AppContext.Provider value={{ ...state, handleInput }}>
+    <AppContext.Provider value={{ ...state, handleInput, handleSubmit }}>
       {children}
     </AppContext.Provider>
   );

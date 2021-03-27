@@ -1,12 +1,23 @@
 import { useGlobalContext } from "../context";
 
 const From = () => {
-  const { handleInput } = useGlobalContext();
+  const {
+    handleInput,
+    questions,
+    difficulty,
+    category,
+    handleSubmit,
+  } = useGlobalContext();
   return (
-    <form className="form">
+    <form className="form" onSubmit={handleSubmit}>
       <div className="form-control flex">
         <label htmlFor="category">Category</label>
-        <select name="category" id="category" onChange={handleInput}>
+        <select
+          name="category"
+          id="category"
+          value={category}
+          onChange={handleInput}
+        >
           <option value="Linux">Linux</option>
           <option value="DevOps">DevOps</option>
           <option value="Networking">Networking</option>
@@ -26,7 +37,12 @@ const From = () => {
       </div>
       <div className="form-control flex">
         <label htmlFor="difficulty">Difficulty</label>
-        <select name="difficulty" id="difficulty" onChange={handleInput}>
+        <select
+          name="difficulty"
+          id="difficulty"
+          value={difficulty}
+          onChange={handleInput}
+        >
           <option value="Easy">Easy</option>
           <option value="Medium">Medium</option>
           <option value="Hard">Hard</option>
@@ -39,6 +55,7 @@ const From = () => {
           name="questions"
           type="number"
           id="questions"
+          value={questions}
           onChange={handleInput}
         />
       </div>
