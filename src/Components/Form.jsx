@@ -1,30 +1,46 @@
+import { useGlobalContext } from "../context";
+
 const From = () => {
+  const { handleInput } = useGlobalContext();
   return (
     <form className="form">
       <div className="form-control flex">
         <label htmlFor="category">Category</label>
-        <select id="category">
-          <option value="">Linux</option>
-          <option value="">DevOps</option>
-          <option value="">Networking</option>
-          <option value="">Programming (PHP, JS, Pythong and etc.)</option>
-          <option value="">Cloud</option>
-          <option value="">Docker</option>
-          <option value="">Kubernetes</option>
+        <select name="category" id="category" onChange={handleInput}>
+          <option value="Linux">Linux</option>
+          <option value="DevOps">DevOps</option>
+          <option value="Networking">Networking</option>
+          <option value="JAVA">JAVA</option>
+          <option value="C++">C++</option>
+          <option value="JS">JS</option>
+          <option value="C">C</option>
+          <option value="PHP">PHP</option>
+          <option value="C#">C#</option>
+          <option value="PYTHON">PYTHON</option>
+          <option value="GO">GO</option>
+          <option value="RUBY">RUBY</option>
+          <option value="Cloud">Cloud</option>
+          <option value="Docker">Docker</option>
+          <option value="Kubernetes">Kubernetes</option>
         </select>
       </div>
       <div className="form-control flex">
         <label htmlFor="difficulty">Difficulty</label>
-        <select id="difficulty">
-          <option value="">Easy</option>
-          <option value="">Medium</option>
-          <option value="">Hard</option>
+        <select name="difficulty" id="difficulty" onChange={handleInput}>
+          <option value="Easy">Easy</option>
+          <option value="Medium">Medium</option>
+          <option value="Hard">Hard</option>
         </select>
       </div>
 
       <div className="form-control flex">
-        <label htmlFor="limit">Questions</label>
-        <input type="number" id="limit" />
+        <label htmlFor="questions">Questions</label>
+        <input
+          name="questions"
+          type="number"
+          id="questions"
+          onChange={handleInput}
+        />
       </div>
       <button type="submit" className="sbm_btn">
         Let's Go
