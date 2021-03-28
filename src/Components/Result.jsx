@@ -3,8 +3,10 @@ import { useGlobalContext } from "../context";
 
 export default function Result() {
   const { restartQuiz, correctAnsweres, quizes } = useGlobalContext();
+
   const a = quizes.length / 100;
   const res = a * correctAnsweres;
+
   return (
     <div className="res_overlay flex">
       <div className="res">

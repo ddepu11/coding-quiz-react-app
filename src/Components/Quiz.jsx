@@ -59,11 +59,9 @@ export default function Quiz() {
               Questions {currentQuestionIndex + 1}/{quizes.length}
             </p>
           </div>
-          <div className="write_answere">
-            <span>
-              <TiTick className="tick" />
-              {correctAnsweres}
-            </span>
+          <div className="write_answere flex">
+            <TiTick className="tick" />
+            <span>{correctAnsweres}</span>
           </div>
         </header>
         <section className="section">

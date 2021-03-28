@@ -135,11 +135,14 @@ select {
 }
 .tick {
   color: green;
+  font-size: 1.54em;
+}
+.write_answere span {
   font-size: 1.3em;
 }
 .quiz {
   display: grid;
-  grid-template-columns: repeat(2, minmax(100px, 200px));
+  grid-template-columns: repeat(2, minmax(100px, 250px));
   grid-template-areas:
     "h h"
     "s s";
@@ -162,7 +165,7 @@ select {
 }
 
 .q h3 {
-  font-size: 1.3em;
+  font-size: 1.4em;
   font-weight: 400;
   letter-spacing: 1px;
 }
@@ -176,6 +179,7 @@ select {
   display: block;
   padding: 10px 20px;
   margin-bottom: 10px;
+  font-size: 1em;
 }
 
 .res_overlay {
@@ -222,4 +226,63 @@ select {
 }
 .play_again:hover {
   transform: scale(1.1) translateX(-5px);
+}
+@media (max-width: 510px) {
+  .form-control label {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+  }
+  .form-control input {
+    width: 100%;
+  }
+
+  .form-control select {
+    font-size: 1.2em;
+    letter-spacing: 1px;
+    padding: 5px 10px;
+    width: 100%;
+  }
+  .form-control {
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 0 0 25px;
+  }
+  .q h3 {
+    font-size: 1em;
+  }
+  .options button {
+    padding: 8px 16px;
+    margin-bottom: 10px;
+    font-size: 0.8em;
+  }
+  .next_q {
+    font-size: 0.8em;
+    padding: 10px 20px;
+    margin-top: 15px;
+    width: 100%;
+  }
+  .write_answere span {
+    font-size: 1em;
+  }
+  .tick {
+    font-size: 1.3em;
+  }
+  .res h1 {
+    font-size: 1em;
+    letter-spacing: 4px;
+    padding: 10px 10px;
+  }
+  .res p {
+    font-size: 0.8em;
+    padding: 10px 10px;
+  }
+  .play_again {
+    font-size: 0.8em;
+    padding: 10px 20px;
+    margin-top: 20px;
+    width: 50%;
+  }
+  .loading {
+    font-size: 1.2em;
+  }
 }
