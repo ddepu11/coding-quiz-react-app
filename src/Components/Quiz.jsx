@@ -38,7 +38,6 @@ export default function Quiz() {
     ],
   };
 
-
   const isAnswereCorrect = (e) => {
     const { iscorrect } = e.target.dataset;
 
@@ -84,6 +83,8 @@ export default function Quiz() {
                     {item}
                   </button>
                 );
+              } else {
+                return "";
               }
             })}
           </div>

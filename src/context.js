@@ -28,7 +28,6 @@ const AppProvider = ({ children }) => {
 
   const handleInput = (e) => {
     const { value, name } = e.target;
-    console.log({ value, name });
     dispatch({ type: SET_INPUT, payload: { name, value } });
   };
 

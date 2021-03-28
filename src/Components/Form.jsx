@@ -20,10 +20,6 @@ const From = () => {
         >
           <option value="Linux">Linux</option>
           <option value="DevOps">DevOps</option>
-          <option value="Networking">Networking</option>
-          <option value="JavaScript">
-            Programming (PHP, JS, Pythong and etc.)
-          </option>
           <option value="Cloud">Cloud</option>
           <option value="Docker">Docker</option>
           <option value="Kubernetes">Kubernetes</option>
