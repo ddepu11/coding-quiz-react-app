@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/coding-quiz-react-app/static/css/main.162d17c7.chunk.css",
-    "main.js": "/coding-quiz-react-app/static/js/main.46ea65a9.chunk.js",
-    "main.js.map": "/coding-quiz-react-app/static/js/main.46ea65a9.chunk.js.map",
+    "main.js": "/coding-quiz-react-app/static/js/main.f75ea1dc.chunk.js",
+    "main.js.map": "/coding-quiz-react-app/static/js/main.f75ea1dc.chunk.js.map",
     "runtime-main.js": "/coding-quiz-react-app/static/js/runtime-main.43f258ab.js",
     "runtime-main.js.map": "/coding-quiz-react-app/static/js/runtime-main.43f258ab.js.map",
     "static/js/2.f22a94c5.chunk.js": "/coding-quiz-react-app/static/js/2.f22a94c5.chunk.js",
@@ -16,6 +16,6 @@
     "static/js/runtime-main.43f258ab.js",
     "static/js/2.f22a94c5.chunk.js",
     "static/css/main.162d17c7.chunk.css",
-    "static/js/main.46ea65a9.chunk.js"
+    "static/js/main.f75ea1dc.chunk.js"
   ]
 }
