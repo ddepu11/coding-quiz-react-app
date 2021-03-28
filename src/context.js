@@ -1,5 +1,12 @@
 import { useContext, createContext, useReducer } from "react";
-import { SET_INPUT, SET_LOADING, SET_QUIZES, NEXT_QUESTION } from "./actions";
+import {
+  SET_INPUT,
+  SET_LOADING,
+  SET_QUIZES,
+  NEXT_QUESTION,
+  CORRECT_QUESTION,
+  RESTART_QUIZ,
+} from "./actions";
 import { reducer } from "./reducer";
 
 const AppContext = createContext();
@@ -12,6 +19,8 @@ const initialState = {
   quizes: [],
   hasQuizStarted: false,
   currentQuestionIndex: 0,
+  correctAnsweres: 0,
+  showResult: false,
 };
 
 const AppProvider = ({ children }) => {
@@ -29,7 +38,6 @@ const AppProvider = ({ children }) => {
       const res = await fetch(url);
       const data = await res.json();
       dispatch({ type: SET_QUIZES, payload: data });
-      console.log(data);
     } catch (error) {
       console.log(error);
     }
@@ -47,9 +55,25 @@ const AppProvider = ({ children }) => {
     dispatch({ type: NEXT_QUESTION });
   };
 
+  const currectAns = () => {
+    dispatch({ type: CORRECT_QUESTION });
+    dispatch({ type: NEXT_QUESTION });
+  };
+
+  const restartQuiz = () => {
+    dispatch({ type: RESTART_QUIZ });
+  };
+
   return (
     <AppContext.Provider
-      value={{ ...state, handleInput, handleSubmit, nextQuestion }}
+      value={{
+        ...state,
+        handleInput,
+        handleSubmit,
+        nextQuestion,
+        currectAns,
+        restartQuiz,
+      }}
     >
       {children}
     </AppContext.Provider>

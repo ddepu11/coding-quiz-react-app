@@ -3,7 +3,13 @@ import { TiTick } from "react-icons/ti";
 import { useGlobalContext } from "../context";
 
 export default function Quiz() {
-  const { quizes, currentQuestionIndex, nextQuestion } = useGlobalContext();
+  const {
+    quizes,
+    currentQuestionIndex,
+    nextQuestion,
+    currectAns,
+    correctAnsweres,
+  } = useGlobalContext();
   const currentQuestion = quizes[currentQuestionIndex];
 
   const {
@@ -32,7 +38,18 @@ export default function Quiz() {
     ],
   };
 
-  console.log(currentQuiz);
+
+  const isAnswereCorrect = (e) => {
+    const { iscorrect } = e.target.dataset;
+
+    // console.log(iscorrect === "true");
+
+    if (iscorrect === "true") {
+      currectAns();
+    } else {
+      nextQuestion();
+    }
+  };
 
   return (
     <div className="outer">
@@ -45,7 +62,8 @@ export default function Quiz() {
           </div>
           <div className="write_answere">
             <span>
-              <TiTick className="tick" />4
+              <TiTick className="tick" />
+              {correctAnsweres}
             </span>
           </div>
         </header>
@@ -57,7 +75,15 @@ export default function Quiz() {
           <div className="options">
             {currentQuiz.answers.map((item, index) => {
               if (item) {
-                return <button key={index}>{item}</button>;
+                return (
+                  <button
+                    data-iscorrect={currentQuiz.correct_answers[index]}
+                    onClick={isAnswereCorrect}
+                    key={index}
+                  >
+                    {item}
+                  </button>
+                );
               }
             })}
           </div>
