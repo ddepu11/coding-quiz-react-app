@@ -11,7 +11,7 @@ export default function Result() {
     <div className="res_overlay flex">
       <div className="res">
         <h1>Congratulations!!</h1>
-        <p>You have answered {res * 100}% questions correctly</p>
+        <p>You have answered {Math.floor(res * 100)}% questions correctly</p>
         <button onClick={restartQuiz} className="play_again">
           Play Again
         </button>
