@@ -1,4 +1,4 @@
-import { SET_INPUT, SET_LOADING, SET_QUIZES } from "./actions";
+import { SET_INPUT, SET_LOADING, SET_QUIZES, NEXT_QUESTION } from "./actions";
 
 const reducer = (state, action) => {
   const payload = action.payload;
@@ -20,6 +20,14 @@ const reducer = (state, action) => {
         quizes: payload,
         loading: false,
         hasQuizStarted: true,
+      };
+    case NEXT_QUESTION:
+      return {
+        ...state,
+        currentQuestionIndex:
+          state.currentQuestionIndex === state.quizes.length - 1
+            ? state.currentQuestionIndex
+            : state.currentQuestionIndex + 1,
       };
     default:
       return {

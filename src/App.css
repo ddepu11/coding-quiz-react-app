@@ -113,6 +113,8 @@ select {
   letter-spacing: 2px;
 }
 .quiz {
+}
+.outer {
   width: auto;
   height: auto;
   color: white;
@@ -123,4 +125,54 @@ select {
   border-bottom: 2px rgba(40, 40, 40, 0.35) solid;
   border-right: 2px rgba(40, 40, 40, 0.35) solid;
   padding: 20px;
+}
+
+.next_q {
+  font-size: 1em;
+  padding: 5px 10px;
+  margin-top: 10px;
+}
+.tick {
+  color: green;
+  font-size: 1.3em;
+}
+.quiz {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(100px, 200px));
+  grid-template-areas:
+    "h h"
+    "s s";
+}
+
+.header {
+  grid-area: h;
+  justify-content: space-between;
+}
+
+.section {
+  grid-area: s;
+}
+.q {
+  padding: 20px 0;
+}
+.q > p {
+  padding: 10px 0;
+  font-size: 0.8em;
+}
+
+.q h3 {
+  font-size: 1.3em;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+.options {
+  text-align: center;
+}
+
+.options button {
+  width: 100%;
+  display: block;
+  padding: 10px 20px;
+  margin-bottom: 10px;
 }

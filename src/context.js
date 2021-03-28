@@ -1,5 +1,5 @@
 import { useContext, createContext, useReducer } from "react";
-import { SET_INPUT, SET_LOADING, SET_QUIZES } from "./actions";
+import { SET_INPUT, SET_LOADING, SET_QUIZES, NEXT_QUESTION } from "./actions";
 import { reducer } from "./reducer";
 
 const AppContext = createContext();
@@ -11,6 +11,7 @@ const initialState = {
   loading: false,
   quizes: [],
   hasQuizStarted: false,
+  currentQuestionIndex: 0,
 };
 
 const AppProvider = ({ children }) => {
@@ -42,8 +43,14 @@ const AppProvider = ({ children }) => {
     fetchQuizs(END_POINT);
   };
 
+  const nextQuestion = () => {
+    dispatch({ type: NEXT_QUESTION });
+  };
+
   return (
-    <AppContext.Provider value={{ ...state, handleInput, handleSubmit }}>
+    <AppContext.Provider
+      value={{ ...state, handleInput, handleSubmit, nextQuestion }}
+    >
       {children}
     </AppContext.Provider>
   );

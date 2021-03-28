@@ -7,7 +7,7 @@ import { useGlobalContext } from "./context";
 function App() {
   const { loading, hasQuizStarted } = useGlobalContext();
 
-  if (hasQuizStarted) {
+  if (!hasQuizStarted) {
     return (
       <div className="container flex">{loading ? <Loading /> : <From />}</div>
     );
